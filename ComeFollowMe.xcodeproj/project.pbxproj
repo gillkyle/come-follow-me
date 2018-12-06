@@ -14,6 +14,9 @@
 		272D622321B8B3930087D9B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272D622121B8B3930087D9B8 /* LaunchScreen.storyboard */; };
 		272D624C21B8B7970087D9B8 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D624B21B8B7970087D9B8 /* Lesson.swift */; };
 		272D624E21B8BA000087D9B8 /* LessonDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D624D21B8BA000087D9B8 /* LessonDatabase.swift */; };
+		272D625021B8BB1B0087D9B8 /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D624F21B8BB1B0087D9B8 /* LessonsViewController.swift */; };
+		272D625221B8BBAD0087D9B8 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D625121B8BBAD0087D9B8 /* LessonViewController.swift */; };
+		272D625421B8BFB80087D9B8 /* comefollowme.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 272D625321B8BFB70087D9B8 /* comefollowme.sqlite */; };
 		C4D003210B1DF07BA9ECF6CD /* Pods_ComeFollowMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891E7599E2A2B47291C4FF83 /* Pods_ComeFollowMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +49,9 @@
 		272D623421B8B3930087D9B8 /* ComeFollowMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComeFollowMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		272D624B21B8B7970087D9B8 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		272D624D21B8BA000087D9B8 /* LessonDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDatabase.swift; sourceTree = "<group>"; };
+		272D624F21B8BB1B0087D9B8 /* LessonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
+		272D625121B8BBAD0087D9B8 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
+		272D625321B8BFB70087D9B8 /* comefollowme.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = comefollowme.sqlite; sourceTree = "<group>"; };
 		6FEB6D603D48FBF3F95CC6D8 /* Pods-ComeFollowMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComeFollowMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComeFollowMe/Pods-ComeFollowMe.release.xcconfig"; sourceTree = "<group>"; };
 		891E7599E2A2B47291C4FF83 /* Pods_ComeFollowMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComeFollowMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A39BFCF1EA689754F6D1263 /* Pods-ComeFollowMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComeFollowMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComeFollowMe/Pods-ComeFollowMe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +130,8 @@
 			children = (
 				272D621A21B8B3920087D9B8 /* ViewController.swift */,
 				272D621821B8B3920087D9B8 /* AppDelegate.swift */,
+				272D624F21B8BB1B0087D9B8 /* LessonsViewController.swift */,
+				272D625121B8BBAD0087D9B8 /* LessonViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -140,6 +148,7 @@
 		272D624921B8B4520087D9B8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				272D625321B8BFB70087D9B8 /* comefollowme.sqlite */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -275,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				272D625421B8BFB80087D9B8 /* comefollowme.sqlite in Resources */,
 				272D622321B8B3930087D9B8 /* LaunchScreen.storyboard in Resources */,
 				272D622021B8B3930087D9B8 /* Assets.xcassets in Resources */,
 				272D621E21B8B3920087D9B8 /* Main.storyboard in Resources */,
@@ -350,8 +360,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				272D624E21B8BA000087D9B8 /* LessonDatabase.swift in Sources */,
+				272D625021B8BB1B0087D9B8 /* LessonsViewController.swift in Sources */,
 				272D624C21B8B7970087D9B8 /* Lesson.swift in Sources */,
 				272D621B21B8B3920087D9B8 /* ViewController.swift in Sources */,
+				272D625221B8BBAD0087D9B8 /* LessonViewController.swift in Sources */,
 				272D621921B8B3920087D9B8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
