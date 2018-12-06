@@ -16,13 +16,14 @@ class LessonsViewController : UITableViewController {
     }
     
     // MARK - Properties
-    var lessons = LessonDatabase.sharedLessonDatabase.lessons()
+    var lessons = LessonDatabase.sharedLessonDatabase.lessonTitles()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.ShowLessonSegue {
             if let lessonVC = segue.destination as? LessonViewController {
                 if let indexPath = sender as? IndexPath {
-                    lessonVC.lesson = lessons[indexPath.row]
+                    lessonVC.lessonName = lessons[indexPath.row]
+                    lessonVC.lessonId = indexPath.row
                 }
             }
         }
@@ -35,7 +36,6 @@ class LessonsViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.LessonCellIdentifier, for: indexPath)
-        puts(lessons[indexPath.row])
         cell.textLabel?.text = lessons[indexPath.row]
         
         return cell

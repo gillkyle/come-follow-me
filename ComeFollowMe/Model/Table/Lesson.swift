@@ -14,8 +14,10 @@ struct Lesson : TableRecord, FetchableRecord {
     var name: String
     var notes: String
     var goal: String
-    var startdate: Date
-    var enddate: Date
+//    var startdate: Date
+//    var enddate: Date
+    var sdate: String
+    var edate: String
     
     static let databaseTableName = "lesson"
     
@@ -23,15 +25,27 @@ struct Lesson : TableRecord, FetchableRecord {
     static let name = "name"
     static let notes = "notes"
     static let goal = "goal"
-    static let startdate = "startdate"
-    static let enddate = "enddate"
+//    static let startdate = "startdate"
+//    static let enddate = "enddate"
+    static let sdate = "sdate"
+    static let edate = "edate"
+    
+
+    init() {
+        id = 1
+        name = ""
+        notes = ""
+        goal = ""
+        sdate = ""
+        edate = ""
+    }
     
     init(row: Row) {
         id = row[Lesson.id]
         name = String(data: row[Lesson.name], encoding: .utf8)!
         notes = String(data: row[Lesson.notes], encoding: .utf8)!
         goal = String(data: row[Lesson.goal], encoding: .utf8)!
-        startdate = row[Lesson.startdate]
-        enddate = row[Lesson.enddate]
+        sdate = String(data: row[Lesson.sdate], encoding: .utf8)!
+        edate = String(data: row[Lesson.edate], encoding: .utf8)!
     }
 }

@@ -31,9 +31,27 @@ class LessonDatabase {
     
     // MARK: - Helpers
     //
-    // Return an array of strings listing the titles of all lessons
+    // Return an array of lessons 
     //
-    func lessons() -> [String] {
+    func lessons() -> [Lesson] {
+        do {
+            let lessons = try dbQueue.inDatabase { (db: Database) -> [Lesson] in
+                var lessons = [Lesson]()
+                for row in try Row.fetchAll(db,
+                    "select name from \(Lesson.databaseTableName)", arguments: [ ]) {
+                        lessons.append(Lesson(row: row))
+                }
+                return lessons
+            }
+            return lessons
+        } catch {
+            return []
+        }
+    }
+    //
+    // Return an array of lesson titles
+    //
+    func lessonTitles() -> [String] {
         do {
             let lessons = try dbQueue.inDatabase { (db: Database) -> [String] in
                 var lessons = [String]()
@@ -46,6 +64,28 @@ class LessonDatabase {
             return lessons
         } catch {
             return []
+        }
+    }
+    //
+    // Returns a specific lesson for a given id
+    //
+    func lessonForId(_ lessonId: Int) -> Lesson {
+        do {
+            let lesson = try dbQueue.inDatabase { (db: Database) -> Lesson in
+                let row = try Row.fetchOne(db,
+                                           "select * from \(Lesson.databaseTableName) " +
+                    "where \(Lesson.id) = ?",
+                    arguments: [ lessonId ])
+                if let returnedRow = row {
+                    return Lesson(row: returnedRow)
+                }
+                
+                return Lesson()
+            }
+            
+            return lesson
+        } catch {
+            return Lesson()
         }
     }
 }
