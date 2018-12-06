@@ -27,6 +27,8 @@ class LessonViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // remove table cell lines
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         title = "Lesson Journal"
         
         updateModel()

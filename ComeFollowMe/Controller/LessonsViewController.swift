@@ -17,6 +17,7 @@ class LessonsViewController : UITableViewController {
     
     // MARK - Properties
     var lessons = LessonDatabase.sharedLessonDatabase.lessonTitles()
+    var dates = LessonDatabase.sharedLessonDatabase.lessonStartDates()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.ShowLessonSegue {
@@ -37,6 +38,7 @@ class LessonsViewController : UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.LessonCellIdentifier, for: indexPath)
         cell.textLabel?.text = lessons[indexPath.row]
+        cell.detailTextLabel?.text = dates[indexPath.row]
         
         return cell
     }

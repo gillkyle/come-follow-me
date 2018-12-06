@@ -67,6 +67,24 @@ class LessonDatabase {
         }
     }
     //
+    // Return an array of lesson start dates
+    //
+    func lessonStartDates() -> [String] {
+        do {
+            let dates = try dbQueue.inDatabase { (db: Database) -> [String] in
+                var dates = [String]()
+                for row in try Row.fetchAll(db,
+                                            "select sdate from \(Lesson.databaseTableName)", arguments: [ ]) {
+                                                dates.append(row[0])
+                }
+                return dates
+            }
+            return dates
+        } catch {
+            return []
+        }
+    }
+    //
     // Returns a specific lesson for a given id
     //
     func lessonForId(_ lessonId: Int) -> Lesson {
